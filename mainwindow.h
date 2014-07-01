@@ -20,11 +20,21 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+private slots:
+    /**
+     * @brief on_exitButton_clicked event of the close button
+     */
+    void on_exitButton_clicked();
+    /**
+     * @brief initializeGUI
+     */
+    void initializeGUI();
+
 private:
     Ui::MainWindow *ui;
-    BattleField *field;
+    BattleField *m_field; /**< Displays the field*/
 
-    QGraphicsScene *scene;
+    QGraphicsScene *m_scene; /**< Contains the graphical items*/
 };
 
 #endif // MAINWINDOW_H
