@@ -2,6 +2,11 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QString>
+#include <QGraphicsScene>
+#include <QPainter>
+#include <QColor>
+#include <battlefield.h>
 
 namespace Ui {
 class MainWindow;
@@ -17,6 +22,9 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    BattleField *field;
+
+    QGraphicsScene *scene;
 };
 
 #endif // MAINWINDOW_H
