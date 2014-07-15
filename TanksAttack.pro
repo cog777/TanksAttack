@@ -14,9 +14,11 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp\
-        battlefield.cpp
+        battlefield.cpp \
+        tank.cpp
 
 HEADERS  += mainwindow.h\
-         battlefield.h
+         battlefield.h \
+         tank.h
 
 FORMS    += mainwindow.ui

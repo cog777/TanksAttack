@@ -31,8 +31,10 @@ void MainWindow::initializeGUI()
 {
     m_scene = new QGraphicsScene(this);
     m_field = new BattleField(QColor(FCOLOR), FSIZEX, FSIZEY, FGRIDSIZE);
+    m_testTank = new Tank(FGRIDSIZE, FSIZEX, FSIZEY, "red", 2, 3);
 
     m_scene->addItem(m_field);
+    m_scene->addItem(m_testTank);
 
     ui->graphicsView->setScene(m_scene);
     ui->graphicsView->setRenderHint(QPainter::Antialiasing, true);
