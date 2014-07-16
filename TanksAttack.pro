@@ -19,6 +19,7 @@ SOURCES += main.cpp\
 
 HEADERS  += mainwindow.h\
          battlefield.h \
-         tank.h
+         tank.h \
+    settings.h
 
 FORMS    += mainwindow.ui

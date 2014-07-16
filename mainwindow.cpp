@@ -1,12 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QTimer>
-
-const QString FCOLOR = "lightblue";
-const qreal FSIZEX = 8;
-const qreal FSIZEY = 7;
-const qreal FGRIDSIZE = 50;
-
+#include "settings.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -31,7 +26,7 @@ void MainWindow::initializeGUI()
 {
     m_scene = new QGraphicsScene(this);
     m_field = new BattleField(QColor(FCOLOR), FSIZEX, FSIZEY, FGRIDSIZE);
-    m_testTank = new Tank(FGRIDSIZE, FSIZEX, FSIZEY, "red", 2, 3);
+    m_testTank = new Tank("red", 1, 2); // Adam: 0-val kezdeni a koordinatat elterjedt a programozasban
 
     m_scene->addItem(m_field);
     m_scene->addItem(m_testTank);

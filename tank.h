@@ -8,9 +8,9 @@
 class Tank : public QGraphicsObject
 {
 public:
-    Tank(const qreal fieldGridSize, const qreal fieldSizeX,
-         const qreal fieldSizeY, QColor tankColor,
-         const int startPosX, const int startPosY,
+    Tank(QColor tankColor,
+         const int startPosX,
+         const int startPosY,
          QGraphicsObject *parent = 0);
     virtual ~Tank();
 
