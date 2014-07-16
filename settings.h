@@ -8,6 +8,6 @@
 const QString FCOLOR = "lightblue";
 const qreal FSIZEX = 8;
 const qreal FSIZEY = 7;
-const qreal FGRIDSIZE = 50;
+const qreal FCELLSIZE = 50;
 
 #endif // SETTINGS_H

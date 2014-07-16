@@ -9,8 +9,8 @@ class Tank : public QGraphicsObject
 {
 public:
     Tank(QColor tankColor,
-         const int startPosX,
-         const int startPosY,
+         const qint32 &startPosX,
+         const qint32 &startPosY,
          QGraphicsObject *parent = 0);
     virtual ~Tank();
 
@@ -19,12 +19,12 @@ public:
                QWidget *widget);
 
 private:
-    qreal m_fGridSize, m_fSizeX, m_fSizeY;
+    qreal m_fCellSize, m_fSizeX, m_fSizeY;
     QColor m_tankColor;
-    int m_posX, m_posY;
+    qint32 m_posX, m_posY;
 
 public slots:
-    void setGridPos(int posX, int posY);
+    void setGridPos(const qint32 &posX, const qint32 &posY);
 };
 
 #endif // TANK_H

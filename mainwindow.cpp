@@ -25,7 +25,7 @@ void MainWindow::on_exitButton_clicked()
 void MainWindow::initializeGUI()
 {
     m_scene = new QGraphicsScene(this);
-    m_field = new BattleField(QColor(FCOLOR), FSIZEX, FSIZEY, FGRIDSIZE);
+    m_field = new BattleField(QColor(FCOLOR), FSIZEX, FSIZEY, FCELLSIZE);
     m_testTank = new Tank("red", 1, 2); // Adam: 0-val kezdeni a koordinatat elterjedt a programozasban
 
     m_scene->addItem(m_field);
