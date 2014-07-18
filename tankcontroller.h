@@ -18,7 +18,10 @@ public:
 signals:
     void lookAround();
 public slots:
-    void getResultForLookAround();
+    void getResultForLookAround(const QVector<QVector<fieldType> > &field);
+
+private:
+    QVector<QVector<fieldType> > m_battleField;
 };
 
 #endif // TANKCONTROLLER_H

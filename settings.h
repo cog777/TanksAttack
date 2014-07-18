@@ -9,5 +9,6 @@ const QString FCOLOR = "lightblue";
 const qreal FSIZEX = 8;
 const qreal FSIZEY = 7;
 const qreal FCELLSIZE = 50;
+enum fieldType{EMPTY, PLAYER1, PLAYER2};
 
 #endif // SETTINGS_H

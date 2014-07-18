@@ -10,7 +10,7 @@ TankController::~TankController()
 
 }
 
-void TankController::getResultForLookAround()
+void TankController::getResultForLookAround(const QVector<QVector<fieldType> > &field)
 {
-
+    m_battleField = field;
 }
