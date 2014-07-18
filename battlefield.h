@@ -16,8 +16,8 @@ public:
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 
 private:
-    qreal m_sizeX, m_sizeY, m_cellSize;
     QColor m_gridColor;
+    qreal m_sizeX, m_sizeY, m_cellSize;
 };
 
 #endif // BATTLEFIELD_H

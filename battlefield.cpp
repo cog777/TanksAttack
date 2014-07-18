@@ -16,6 +16,9 @@ QRectF BattleField::boundingRect() const
 
 void BattleField::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
+    Q_UNUSED(option);
+    Q_UNUSED(widget);
+
     painter->setBrush(m_gridColor);
     for(int i = 0; i < m_sizeY; i++)
     {

@@ -24,13 +24,9 @@ void MainWindow::on_exitButton_clicked()
 
 void MainWindow::initializeGUI()
 {
-    m_scene = new QGraphicsScene(this);
-    m_field = new BattleField(QColor(FCOLOR), FSIZEX, FSIZEY, FCELLSIZE);
-    m_testTank = new Tank("red", 1, 2); // Adam: 0-val kezdeni a koordinatat elterjedt a programozasban
+    m_game = new Game(m_pScene, this);
+    m_game->initialize();
 
-    m_scene->addItem(m_field);
-    m_scene->addItem(m_testTank);
-
-    ui->graphicsView->setScene(m_scene);
+    ui->graphicsView->setScene(m_pScene);
     ui->graphicsView->setRenderHint(QPainter::Antialiasing, true);
 }

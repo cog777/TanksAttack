@@ -8,6 +8,7 @@
 #include <QColor>
 #include <battlefield.h>
 #include <tank.h>
+#include <game.h>
 
 namespace Ui {
 class MainWindow;
@@ -33,10 +34,9 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    BattleField *m_field; /**< Displays the field*/
-    Tank *m_testTank;
 
-    QGraphicsScene *m_scene; /**< Contains the graphical items*/
+    Game *m_game;
+    QGraphicsScene *m_pScene;
 };
 
 #endif // MAINWINDOW_H

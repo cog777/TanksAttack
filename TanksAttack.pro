@@ -16,12 +16,16 @@ SOURCES += main.cpp\
         mainwindow.cpp\
         battlefield.cpp \
         tank.cpp \
-    tankcontroller.cpp
+        tankcontroller.cpp \
+        bullet.cpp \
+    game.cpp
 
 HEADERS  += mainwindow.h\
          battlefield.h \
          tank.h \
-    settings.h \
-    tankcontroller.h
+         settings.h \
+         tankcontroller.h \
+         bullet.h \
+    game.h
 
 FORMS    += mainwindow.ui
