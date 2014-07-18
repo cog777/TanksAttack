@@ -8,6 +8,7 @@
 #include <battlefield.h>
 #include <settings.h>
 #include <QPointer>
+#include <bullet.h>
 
 class Game : public QObject
 {
@@ -26,6 +27,7 @@ private:
 
     Tank *m_testTank;
     BattleField *m_field;
+    Bullet *m_testBullet;
 };
 
 #endif // GAME_H

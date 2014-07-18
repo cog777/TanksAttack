@@ -24,6 +24,7 @@ void MainWindow::on_exitButton_clicked()
 
 void MainWindow::initializeGUI()
 {
+    m_pScene = new QGraphicsScene(this);
     m_game = new Game(m_pScene, this);
     m_game->initialize();
 

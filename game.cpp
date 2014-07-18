@@ -11,8 +11,9 @@ void Game::initialize()
 {
     m_field = new BattleField(QColor("lightblue"), FSIZEX, FSIZEY, FCELLSIZE);
     m_testTank = new Tank("red", 1, 2);
+    m_testBullet = new Bullet();
 
-    m_pScene = new QGraphicsScene(this);
     m_pScene->addItem(m_field);
     m_pScene->addItem(m_testTank);
+    m_pScene->addItem(m_testBullet);
 }

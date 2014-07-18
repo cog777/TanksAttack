@@ -5,7 +5,7 @@
 #include <QPainter>
 #include <settings.h>
 
-const qreal BULLETSIZE = FCELLSIZE / 6;
+const qreal BULLETSIZE = FCELLSIZE / 21;
 
 class Bullet : public QGraphicsObject
 {
