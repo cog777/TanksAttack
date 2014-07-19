@@ -26,6 +26,7 @@ HEADERS  += mainwindow.h\
          settings.h \
          tankcontroller.h \
          bullet.h \
-    game.h
+    game.h \
+    types.h
 
 FORMS    += mainwindow.ui
