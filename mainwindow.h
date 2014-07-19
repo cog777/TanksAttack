@@ -9,6 +9,7 @@
 #include <battlefield.h>
 #include <tank.h>
 #include <game.h>
+#include <QPointer>
 
 namespace Ui {
 class MainWindow;

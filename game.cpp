@@ -1,6 +1,6 @@
 #include "game.h"
 
-Game::Game(QPointer<QGraphicsScene> &pScene, QObject *parent) :
+Game::Game(QPointer<QGraphicsScene> pScene, QObject *parent) :
     QObject(parent), m_pScene(pScene)
 {}
 

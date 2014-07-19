@@ -7,12 +7,13 @@
 #include <tank.h>
 #include <battlefield.h>
 #include <settings.h>
+#include <QPointer>
 
 class Game : public QObject
 {
     Q_OBJECT
 public:
-    explicit Game(QPointer<QGraphicsScene> &pScene, QObject *parent = 0);
+    explicit Game(QPointer<QGraphicsScene> pScene, QObject *parent = 0);
     virtual ~Game();
 
 signals:
