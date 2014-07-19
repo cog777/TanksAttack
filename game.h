@@ -8,6 +8,7 @@
 #include <battlefield.h>
 #include <settings.h>
 #include <QPointer>
+#include <QTimer>
 #include <bullet.h>
 
 class Game : public QObject
@@ -22,12 +23,16 @@ signals:
 public slots:
     void initialize();
 
+private slots:
+    void moveTestBullet();
+
 private:
     QPointer<QGraphicsScene> m_pScene;
 
     Tank *m_testTank;
     BattleField *m_field;
     Bullet *m_testBullet;
+    QTimer *m_bTimer;
 };
 
 #endif // GAME_H
