@@ -18,7 +18,8 @@ SOURCES += main.cpp\
         tank.cpp \
         tankcontroller.cpp \
         bullet.cpp \
-    game.cpp
+    game.cpp \
+    gamecontroller.cpp
 
 HEADERS  += mainwindow.h\
          battlefield.h \
@@ -27,6 +28,8 @@ HEADERS  += mainwindow.h\
          tankcontroller.h \
          bullet.h \
     game.h \
-    types.h
+    types.h \
+    gamecontroller.h \
+    tankinfo.h
 
 FORMS    += mainwindow.ui
