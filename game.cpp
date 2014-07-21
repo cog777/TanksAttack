@@ -5,27 +5,71 @@ Game::Game(QPointer<QGraphicsScene> pScene, QObject *parent) :
 {}
 
 Game::~Game()
-{
-    m_bTimer->stop();
-}
+{}
 
 void Game::initialize()
 {
-    m_bTimer = new QTimer(this);
-    m_field = new BattleField(QColor("lightblue"), FSIZEX, FSIZEY, FCELLSIZE);
-    m_testTank = new Tank("red", 1, 2);
-    m_testBullet = new Bullet();
+    m_pBulletTimer = new QTimer(this);
+    m_pField = new BattleField(QColor("lightblue"), FSIZEX, FSIZEY, FCELLSIZE);
+    m_pTestTank = new Tank("red", 1, 2);
+    m_pBullet = new Bullet();
 
-    connect(m_bTimer, SIGNAL(timeout()), this, SLOT(moveTestBullet()));
+    connect(m_pBulletTimer, SIGNAL(timeout()), this, SLOT(moveBullet()));
 
-    m_bTimer->start(500);
+    m_pScene->addItem(m_pField);
+    m_pScene->addItem(m_pTestTank);
 
-    m_pScene->addItem(m_field);
-    m_pScene->addItem(m_testTank);
-    m_pScene->addItem(m_testBullet);
+    shoot(1, 2, 4, 3);
 }
 
-void Game::moveTestBullet()
+void Game::shoot(const qint32 &x, const qint32 &y,
+                 const qint32 &targetX, const qint32 &targetY)
 {
-    m_testBullet->moveBy(1, 1);
+    m_source.setX((x * FCELLSIZE) + (FCELLSIZE / 2));
+    m_source.setY((y * FCELLSIZE) + (FCELLSIZE / 2));
+    m_target.setX((targetX * FCELLSIZE) + (FCELLSIZE / 2));
+    m_target.setY((targetY * FCELLSIZE) + (FCELLSIZE / 2));
+
+    m_pBulletTimer->start(200);
+    m_pScene->addItem(m_pBullet);
+
+    if (qAbs(m_source.x() - m_target.x()) > qAbs(m_source.y() - m_target.y())) m_xIndex = true;
+    else m_xIndex = false;
+
+    if (m_source.x() < m_target.x()) m_leftToRight = true;
+    else m_leftToRight = false;
+
+    if(m_source.y() < m_target.y()) m_upToDown = true;
+    else m_upToDown = false;
+
+    m_x = m_source.x();
+    m_y = m_source.y();
+}
+
+void Game::moveBullet()
+{
+    if(m_xIndex)
+    {
+        qreal y = (((m_x - m_source.x()) * (m_target.x() - m_target.x())) / (m_y - m_source.x())) + m_y;
+
+        if(m_leftToRight && m_x > m_target.x()) m_pBulletTimer->stop();
+        else if(m_x < m_target.x()) m_pBulletTimer->stop();
+
+        m_pBullet->setPos(m_x, y);
+
+        if(m_leftToRight) m_x++;
+        else m_x--;
+    }
+    else
+    {
+        qreal x = (m_y * (m_target.x() - m_source.x()) - m_source.y()) / (m_target.y() - m_source.y()) + m_target.x();
+
+        if(m_upToDown && m_y > m_target.y()) m_pBulletTimer->stop();
+        else if(m_y < m_target.y()) m_pBulletTimer->stop();
+
+        m_pBullet->setPos(x, m_y);
+
+        if(m_upToDown) m_y++;
+        else m_y--;
+    }
 }

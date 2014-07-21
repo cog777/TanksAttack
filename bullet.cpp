@@ -1,5 +1,7 @@
 #include "bullet.h"
 
+const qreal BULLETSIZE = FCELLSIZE / 35;
+
 Bullet::Bullet(QGraphicsObject *parent)
 {}
 

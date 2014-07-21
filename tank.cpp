@@ -48,6 +48,7 @@ void Tank::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWid
     }
     painter->drawEllipse(QPointF(m_fCellSize / 2, m_fCellSize / 2), m_fCellSize / 5, m_fCellSize / 5);
 
+    painter->setPen(QPen(QColor("black"), FCELLSIZE / 32));
     painter->drawLine(m_fCellSize / 2, ((m_fCellSize / 2) + (m_fCellSize / 5)),
                       m_fCellSize / 2, m_fCellSize);
 }
