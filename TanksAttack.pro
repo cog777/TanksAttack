@@ -30,6 +30,7 @@ HEADERS  += mainwindow.h\
     game.h \
     types.h \
     gamecontroller.h \
-    tankinfo.h
+    tankinfo.h \
+    debug.h
 
 FORMS    += mainwindow.ui

@@ -19,6 +19,7 @@ public:
     virtual ~Game();
 
 signals:
+    void finishedShoot();
 
 public slots:
     void initialize();
